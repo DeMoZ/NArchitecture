@@ -1,11 +1,11 @@
 using System;
 using UniRx;
-using UnityEngine;
 
 public class GameEntity : IDisposable
 {
     public struct Ctx
     {
+        public ClickCubeView CubePrefab;
         public GameCamera Camera;
         public ClickCatcher ClickCatcher;
         public UIGameStateView UiView;
@@ -27,6 +27,7 @@ public class GameEntity : IDisposable
 
         var gamePmCtx = new GamePm.Ctx
         {
+            CubePrefab = _ctx.CubePrefab,
             OnAnyClick = _ctx.OnAnyClick,
             OnObjectHit = _ctx.OnObjectHit
         };

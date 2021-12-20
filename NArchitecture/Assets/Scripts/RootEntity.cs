@@ -44,6 +44,7 @@ public class RootEntity : IDisposable
 
         var gameEntityCtx = new GameEntity.Ctx
         {
+            CubePrefab = _ctx.GamePrefabs.ClickCubePrefab,
             Camera = _ctx.Camera,
             ClickCatcher = _clickCatcher,
             UiView = _uiView,
