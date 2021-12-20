@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 978fe7fffd174f22be89d094b0e9566e, type: 3}
+  m_Name: GamePrefabs
+  m_EditorClassIdentifier: 
+  ClickCatcherPrefab: {fileID: 4436484919202688710, guid: f120eefdae79fba49a91143d7dde8ef7, type: 3}
+  UiGameStatePrefab: {fileID: 3118587757503934373, guid: 9bf0882330fbcc3449d5e4d8eb32a8a9, type: 3}
+  ClickCubePrefab: {fileID: 7862870611252749074, guid: fca2079fee3dd1f459cf315b8888a3c5, type: 3}

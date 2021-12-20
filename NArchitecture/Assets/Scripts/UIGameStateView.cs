@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIGameState : MonoBehaviour
+public class UIGameStateView : MonoBehaviour
 {
     [SerializeField] private Text _ClickCount = default;
 }

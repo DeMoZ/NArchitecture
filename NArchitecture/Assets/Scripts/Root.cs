@@ -4,9 +4,8 @@ public class Root : IDisposable
 {
     public struct Ctx
     {
-        public UIGameState UiPrefab;
-        public ClickCube CubePrefab;
-        public ClickCatcher ClickCatcher;
+        public GamePrefabs GamePrefabs;
+        public GameCamera Camera;
     }
 
     private Ctx _ctx;
@@ -22,9 +21,8 @@ public class Root : IDisposable
     {
         var rootEntityCtx = new RootEntity.Ctx
         {
-            UiPrefab = _ctx.UiPrefab,
-            CubePrefab = _ctx.CubePrefab,
-            ClickCatcher = _ctx.ClickCatcher,
+            GamePrefabs = _ctx.GamePrefabs,
+            Camera = _ctx.Camera
         };
 
        _rootEntity = new RootEntity(rootEntityCtx);

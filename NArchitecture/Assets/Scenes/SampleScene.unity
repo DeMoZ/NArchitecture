@@ -293,6 +293,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -365,6 +366,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cf6b4940f904b649b08a513edd7b7f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Camera: {fileID: 963194227}
 --- !u!1 &1882907573
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,6 +422,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba056d545914c7742885b1a688eccbda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uiGameStatePrefab: {fileID: 3118587757503934373, guid: 9bf0882330fbcc3449d5e4d8eb32a8a9, type: 3}
-  _clickCatcherPrefab: {fileID: 4436484919202688710, guid: f120eefdae79fba49a91143d7dde8ef7, type: 3}
-  _clickCubePrefab: {fileID: 7862870611252749074, guid: fca2079fee3dd1f459cf315b8888a3c5, type: 3}
+  _gamePrefabs: {fileID: 11400000, guid: e973e9e55c553d94187c5aba2ca7658b, type: 2}
+  _camera: {fileID: 963194229}

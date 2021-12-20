@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ClickCube : MonoBehaviour
+public class ClickCubeView : MonoBehaviour
 {
     public void OnClick()
     {
