@@ -6,6 +6,7 @@ public class GamePm : IDisposable
     public struct Ctx
     {
         public ReactiveEvent<bool> OnAnyClick;
+        public ReactiveEvent<bool> OnObjectHit;
     }
 
     private Ctx _ctx;
@@ -14,13 +15,18 @@ public class GamePm : IDisposable
     {
         _ctx = ctx;
 
+        _ctx.OnAnyClick.Subscribe(OnAnyClick);
+        _ctx.OnObjectHit.Subscribe(OnObjectClick);
 
-        _ctx.OnAnyClick.Subscribe(OnClick);
     }
 
-    private void OnClick(bool isObjectClicked)
+    private void OnAnyClick(bool isObjectClicked)
     {
-        Debug.Log($"GamePm received Onclick. Object Clicked = {isObjectClicked}" );
+        Debug.Log($"GamePm received OnAnyclick" );
+    }
+    private void OnObjectClick(bool hitResult)
+    {
+        Debug.Log($"GamePm received OnObjectClick was hit = {hitResult}");
     }
     
     public void Dispose()
