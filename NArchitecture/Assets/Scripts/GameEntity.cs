@@ -14,6 +14,8 @@ public class GameEntity : IDisposable
         public IReactiveProperty<int> LevelIndex;
         public ReactiveEvent<bool> OnAnyClick;
         public ReactiveEvent<bool> OnObjectHit;
+        public IReactiveProperty<int> AnyClickCount;
+        public IReactiveProperty<int> CubeClickCount;
     }
 
     private Ctx _ctx;
@@ -29,7 +31,9 @@ public class GameEntity : IDisposable
         {
             CubePrefab = _ctx.CubePrefab,
             OnAnyClick = _ctx.OnAnyClick,
-            OnObjectHit = _ctx.OnObjectHit
+            OnObjectHit = _ctx.OnObjectHit,
+            AnyClickCount = _ctx.AnyClickCount,
+            CubeClickCount = _ctx.CubeClickCount
         };
 
         _gamePm = new GamePm(gamePmCtx);

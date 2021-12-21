@@ -16,8 +16,9 @@ public class RootEntity : IDisposable
     private readonly IReactiveProperty<bool> _onStart;
     private readonly ReactiveEvent<bool> _onAnyClick;
     private readonly ReactiveEvent<bool> _onObjectClick;
-    private readonly IReactiveProperty<int> _clickedTimes;
     private readonly IReactiveProperty<int> _levelIndex;
+    private IReactiveProperty<int> _anyClickCount;
+    private IReactiveProperty<int> _cubeClickCount;
 
     private Ctx _ctx;
     private ClickCatcher _clickCatcher;
@@ -30,8 +31,11 @@ public class RootEntity : IDisposable
         _onStart = new ReactiveProperty<bool>();
         _onAnyClick = new ReactiveEvent<bool>();
         _onObjectClick = new ReactiveEvent<bool>();
-        _clickedTimes = new ReactiveProperty<int>();
-        _levelIndex = new ReactiveProperty<int>();
+
+        _levelIndex = new ReactiveProperty<int>(0);
+
+        _anyClickCount = new ReactiveProperty<int>(0);
+        _cubeClickCount = new ReactiveProperty<int>(0);
 
         CreateGameEntity();
     }
@@ -52,8 +56,18 @@ public class RootEntity : IDisposable
             OnStart = _onStart,
             LevelIndex = _levelIndex,
             OnAnyClick = _onAnyClick,
-            OnObjectHit = _onObjectClick
+            OnObjectHit = _onObjectClick,
+            AnyClickCount = _anyClickCount,
+            CubeClickCount = _cubeClickCount
         };
+
+        var uiCtx = new UIGameStateView.Ctx()
+        {
+            AnyClickCount = _anyClickCount,
+            CubeClickCount = _cubeClickCount
+        };
+
+        _uiView.SetCtx(uiCtx);
         
         var gameEntity = new GameEntity(gameEntityCtx);
     }

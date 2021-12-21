@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class ClickCubeView : MonoBehaviour
 {
-    public struct Ctx{}
+    public struct Ctx
+    {
+        
+    }
 
     private Ctx _ctx;
 
@@ -13,6 +16,6 @@ public class ClickCubeView : MonoBehaviour
     
     public void OnClick()
     {
-        Debug.Log("Clicked on Me");
+        Debug.Log($"{this} Clicked on Me");
     }
 }
